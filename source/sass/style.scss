@@ -42,6 +42,7 @@ body {
   max-width: 768px;
   margin: 0 auto;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 ul {
@@ -131,7 +132,6 @@ a {
     transform: translateY(-1000px);
     opacity: 0;
     transition: all 0.5s ease;
-    overflow: hidden;
 
     &--open {
       top: 70px;
