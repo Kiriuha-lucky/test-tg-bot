@@ -9,8 +9,14 @@ function toogleMenu() {
   menuButton.textContent = menuButton.textContent === "Menu" ? "Close" : "Menu";
 }
 
+function closeMenu() {
+  menu.classList.remove("page-header__wrapper--open");
+  menuButton.classList.remove("page-header__nav-toggle--close");
+  menuButton.textContent = "Menu";
+}
+
 menuButton.addEventListener("click", function () {
-  console.log("click");
+
   toogleMenu();
 });
 
@@ -18,8 +24,8 @@ function clickOutside(el) {
   document.addEventListener("click", function (event) {
     event.stopPropagation();
     if (event.target === el || event.target === menuButton) return;
-    console.log("work");
-    toogleMenu();
+
+    closeMenu()
   });
 }
 

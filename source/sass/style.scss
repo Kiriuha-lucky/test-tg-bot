@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Floripa";
-  src: local("Floripa"), url("/fonts/floripa.woff") format("woff");
+  src: local("Floripa"), url("../fonts/floripa.woff") format("woff");
 }
 
 @font-face {
   font-family: "Gropled";
-  src: local("Gropled"), url("/fonts/gropled.woff") format("woff");
+  src: local("Gropled"), url("../fonts/gropled.woff") format("woff");
 }
 
 html {
@@ -87,6 +87,7 @@ a {
   line-height: 14px;
   letter-spacing: 1px;
   color: #ffffff;
+  cursor: pointer;
 
   &--arrow {
     margin: 0;
@@ -208,6 +209,7 @@ a {
     min-height: 40px;
     text-align: left;
     z-index: 10;
+    cursor: pointer;
 
     &::after {
       content: "";
