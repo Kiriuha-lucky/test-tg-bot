@@ -1,0 +1,558 @@
+@font-face {
+  font-family: "Floripa";
+  src: local("Floripa"), url("/fonts/floripa.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gropled";
+  src: local("Gropled"), url("/fonts/gropled.woff") format("woff");
+}
+
+html {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  width: 375px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.title {
+  margin: 0;
+  font-family: "Floripa";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: "Gropled";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background: none;
+  padding: 12px;
+  border: 1px solid #b9b9b9;
+  border-radius: 18px;
+
+  font-family: "Gropled";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  color: #ffffff;
+
+  &--arrow {
+    margin: 0;
+    padding-right: 57px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 33px;
+      height: 8px;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("../img/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+.page-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  &__wrapper {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    background-color: #000;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    overflow-: hidden;
+    transform: translateY(-1000px);
+    opacity: 0;
+    transition: all 0.5s ease;
+
+    &--open {
+      top: 70px;
+      transform: none;
+      opacity: 1;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 465px;
+      height: 465px;
+      background-image: url("../img/bg_agency.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      top: 50%;
+      right: -50%;
+      transform: translateY(-50%) rotate(55deg);
+      z-index: -1;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 64px;
+      background-image: url("../img/bg_menu.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      left: 0;
+      bottom: -63px;
+    }
+  }
+
+  &__nav-link {
+    padding-left: 13px;
+    margin-bottom: 16px;
+    font-family: "Floripa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__nav-item {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      .page-header__nav-link {
+        margin-bottom: 20px;
+        padding-left: 0;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__nav-toggle {
+    content: "dfgdrfgd";
+    position: relative;
+    border: none;
+    background: none;
+    font-family: "Gropled";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 106%;
+    color: #fff;
+    min-width: 87px;
+    min-height: 40px;
+    text-align: left;
+    z-index: 10;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      background-image: url("../img/icon-menu-open.svg");
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    &--close {
+      &::after {
+        background-image: url("../img/icon-menu-close.svg");
+      }
+    }
+  }
+}
+
+.agency {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 60px;
+  min-height: 120px;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 178px;
+    height: 178px;
+    background-repeat: no-repeat;
+    background-size: 178px;
+    background-position: center center;
+    z-index: -1;
+    background-image: url("../img/bg_agency.png");
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    position: absolute;
+    display: block;
+    font-family: "Floripa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    z-index: -3;
+
+    &:nth-of-type(2) {
+      top: 90px;
+      right: 20px;
+      z-index: 1;
+    }
+  }
+}
+
+.about-us {
+  padding: 0 20px;
+  margin-bottom: 80px;
+  background-image: url("../img/bg_about-us.png");
+  background-size: 280px;
+  background-position: center top -95px;
+  background-repeat: no-repeat;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.webapp {
+  padding: 0 20px;
+  margin-bottom: 60px;
+  background-image: url("../img/bg_webapp.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  &__item {
+    position: relative;
+    &-title {
+      margin: 0;
+      text-transform: uppercase;
+      font-family: "Floripa";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 33px;
+      line-height: 33px;
+      text-align: center;
+      color: rgba(96, 96, 96, 0.5);
+    }
+
+    &-text {
+      margin: 0;
+      margin-bottom: 8px;
+      font-family: "Gropled";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: right;
+      color: #dddddd;
+    }
+  }
+
+  &__item:nth-child(even) {
+    .webapp__item-text {
+      text-align: left;
+    }
+  }
+
+  &__list {
+    margin-bottom: 25px;
+  }
+}
+
+.title-text {
+  margin: 0;
+  margin-bottom: 12px;
+
+  font-family: "Gropled";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  color: #949494;
+}
+
+.stages {
+  padding: 0 20px;
+  margin-bottom: 60px;
+  &__list {
+    margin-bottom: 20px;
+  }
+  &__item {
+    padding-top: 35px;
+    margin-top: 71px;
+    position: relative;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        z-index: -1;
+      }
+    }
+
+    &:nth-child(1) {
+      &::after {
+        width: 208px;
+        height: 108px;
+        background-image: url("../img/arrow-path1.svg");
+        left: 55px;
+        top: 45px;
+      }
+    }
+
+    &:nth-child(2) {
+      &::after {
+        width: 203px;
+        height: 124px;
+        background-image: url("../img/arrow-path2.svg");
+        right: 65px;
+        top: 65px;
+      }
+    }
+
+    &:nth-child(3) {
+      &::after {
+        width: 233px;
+        height: 120px;
+        background-image: url("../img/arrow-path3.svg");
+        left: 25px;
+        top: 55px;
+      }
+    }
+
+    &-title {
+      position: absolute;
+      margin: 0;
+      font-family: "Floripa";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 61px;
+      letter-spacing: 1px;
+      color: #323232;
+      z-index: -1;
+      top: 0;
+      left: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        background-color: #fff;
+        border-radius: 50%;
+        z-index: -1;
+        top: -13px;
+      }
+    }
+
+    &:nth-child(even) {
+      .stages__item-title {
+        right: 0;
+
+        &:before {
+          right: 0;
+        }
+      }
+    }
+
+    &-text {
+      margin: 0;
+      font-family: "Gropled";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      color: #dddddd;
+    }
+
+    &:nth-child(even) {
+      text-align: right;
+      .stages__item-text {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.team {
+  margin-bottom: 45px;
+  padding-left: 20px;
+}
+
+.tabs {
+  margin-bottom: 24px;
+
+  &__btn {
+    padding: 10px;
+    display: inline-block;
+    line-height: 14px;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: none;
+  }
+}
+
+.tab {
+  display: none;
+  margin-top: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+  background-image: url("../img/director.png");
+
+  &:nth-of-type(2) {
+    background-image: url("../img/designer.png");
+  }
+
+  &:nth-of-type(3) {
+    background-image: url("../img/front.png");
+  }
+
+  &:nth-of-type(4) {
+    background-image: url("../img/back.png");
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Floripa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 28px;
+
+    font-family: "Gropled";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    color: #949494;
+  }
+
+  &__text {
+    width: 173px;
+    font-family: "Gropled";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    color: #dddddd;
+  }
+}
+
+.tabs > input[type="radio"]:checked + label {
+  background-color: #fff;
+  color: #000;
+}
+
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3,
+#tab-btn-4:checked ~ #content-4 {
+  display: block;
+}
+
+.page-footer {
+  padding: 0 20px;
+  font-family: "Gropled";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+
+  &__link {
+    display: block;
+    margin-bottom: 12px;
+  }
+}

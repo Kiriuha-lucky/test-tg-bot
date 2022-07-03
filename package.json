@@ -1,0 +1,50 @@
+{
+  "name": "test-pride-agency",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "*",
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-csso": "*",
+    "gulp-htmlmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "*",
+    "gulp-posthtml": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "*",
+    "gulp-svgstore": "*",
+    "gulp-uglify": "*",
+    "gulp-webp": "*",
+    "node-sass": "*",
+    "posthtml-include": "*",
+    "sass": "^1.52.3"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ],
+  "engines": {
+    "node": "*"
+  }
+}
