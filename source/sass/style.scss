@@ -40,6 +40,7 @@ body {
 .container {
   width: 100%;
   max-width: 768px;
+  min-width: 375px;
   margin: 0 auto;
   box-sizing: border-box;
   overflow: hidden;
@@ -74,7 +75,9 @@ a {
 }
 
 .btn {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   border: none;
   background: none;
