@@ -90,12 +90,16 @@ a {
   font-family: "Gropled";
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0;
   line-height: 14px;
   letter-spacing: 1px;
   color: #ffffff;
   cursor: pointer;
   box-sizing: border-box;
+
+  &>span {
+    font-size: 14px;
+  }
 
   &:hover {
     background-color: #fff;
