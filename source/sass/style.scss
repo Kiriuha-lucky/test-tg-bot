@@ -75,6 +75,8 @@ a {
 }
 
 .btn {
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,6 +95,7 @@ a {
   letter-spacing: 1px;
   color: #ffffff;
   cursor: pointer;
+  box-sizing: border-box;
 
   &:hover {
     background-color: #fff;
